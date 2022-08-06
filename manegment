@@ -1,0 +1,179 @@
+from tkinter import *
+from tkinter import ttk
+import random
+import datetime
+from tkinter import messagebox
+
+
+class hospital:
+
+    def __init__(self,root):
+        self.root=root
+        self.root.title("HOSPITAL MANEGMENT SYSTEM")
+        self.root.geometry("1650x850+0+0")
+
+        self.nameoftablets=StringVar()
+        self.names=StringVar()
+        self.connects=StringVar()
+        self.emails=StringVar()
+        lblheadline = Label(self.root,text="VISHWAKARMA ART",bd=20,fg="green",bg="white",font=("time new roman",40,"bold"))
+        lblheadline.pack(side=TOP,fill=X)
+        """data frame"""
+        Dataframe = Frame(self.root,bd=20,relief=RIDGE)
+        Dataframe.place(x=0,y=130,width=1530,height=400)
+        Dataframeleft = LabelFrame(Dataframe,text="DATA",bd=10,relief=RIDGE)
+        Dataframeleft.place(x=0,y=3,width=980,height=350)
+
+        Dataframeright = Frame(Dataframe,bd=10,relief=RIDGE)
+        Dataframeright.place(x=990,y=3,width=500,height=350)
+        """botton"""
+
+        Dataframebutton = Frame(self.root,bd=10,relief=RIDGE)
+        Dataframebutton.place(x=0,y=530,width=1530,height=50)
+
+        """detail"""
+
+        Detailframe = Frame(self.root,bd=10,relief=RIDGE)
+        Detailframe.place(x=0,y=570,width=1530,height=210)
+
+        """lblnametablet = Label(Dataframeleft,text="NAME OF TABLET",font=("time new roman",10,"bold"),padx=1)
+        lblnametablet.grid(row=0,column=0)
+        comnametablet= ttk.Combobox(Dataframeleft,textvariable=self.nameoftablets,font=("time new raman",10,"bold"),width=20)
+        comnametablet["values"]=("NICE ","CORONA VACCINATION","PAIN KILLER")
+        comnametablet.grid(row=0,column=1)"""
+
+
+        lblrel = Label(Dataframeleft,font=("arial",10,"bold"),text="NAME ",padx=20)
+        lblrel.grid(row=2,column=0,pady=10)
+        txtrel = Entry(Dataframeleft,textvariable=self.names,font=("arial",10,"bold"),width=30)
+        txtrel.grid(row=2,column=1)
+
+        lblrel = Label(Dataframeleft,font=("arial",10,"bold"),text="CONTACT NUMBER",padx=20)
+        lblrel.grid(row=3,column=0,pady=10)
+        txtrel = Entry(Dataframeleft,textvariable=self.connects,font=("arial",10,"bold"),width=30)
+        txtrel.grid(row=3,column=1)
+
+
+        lblrel = Label(Dataframeleft,font=("arial",10,"bold"),text="e mail id",padx=20)
+        lblrel.grid(row=4,column=0,pady=10)
+        txtrel = Entry(Dataframeleft,textvariable=self.emails,font=("arial",10,"bold"),width=30)
+        txtrel.grid(row=4,column=1)
+
+
+
+
+
+
+
+
+        self.txtprescriotion = Text(Dataframeright,font=("arial",12,"bold"),width=52,height=16.50,padx=2,pady=6)
+        self.txtprescriotion.grid(row=0,column=0)
+
+        """****************************************button*****************************************************************************************"""
+        btnprescription= Button(Dataframebutton,text="Prescription",bg="green",fg="white",font=("arial",12,"bold"),width=29,padx=5)
+        btnprescription.grid(row=0,column=0)
+
+
+        btnprescription= Button(Dataframebutton,text="Prescription",bg="green",fg="white",font=("arial",12,"bold"),width=29)
+        btnprescription.grid(row=0,column=1)
+
+
+        btnprescription= Button(Dataframebutton,text="Prescription",bg="green",fg="white",font=("arial",12,"bold"),width=29)
+        btnprescription.grid(row=0,column=2)
+
+
+        btnprescription= Button(Dataframebutton,text="Prescription",bg="green",fg="white",font=("arial",12,"bold"),width=29)
+        btnprescription.grid(row=0,column=3)
+
+
+        btnprescription= Button(Dataframebutton,text="Prescription",bg="green",fg="white",font=("arial",12,"bold"),width=29)
+        btnprescription.grid(row=0,column=4)
+
+
+
+        """************************tabel  and  s'''"""
+
+        scroll_x = ttk.Scrollbar(Detailframe,orient=HORIZONTAL)
+        scroll_y = ttk.Scrollbar(Detailframe, orient=VERTICAL)
+
+        col = ("name","phone","emailid")
+
+        self.treeview = ttk.Treeview(Detailframe, height=8, show='headings', columns=col)
+
+
+
+
+
+
+
+
+        self.treeview.column('name', width=100, anchor=CENTER)
+        self.treeview.column('phone', width=100, anchor=CENTER)
+        self.treeview.column('emailid', width=100, anchor=CENTER)
+
+
+        self.treeview.heading('name', text='NAME')
+        self.treeview.heading('phone', text='PHONE NO.')
+        self.treeview.heading('emailid', text='E MAIL ID')
+
+        self.treeview.pack( fill=BOTH,expand=1)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+root = Tk()
+odj = hospital(root)
+root.mainloop()
